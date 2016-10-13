@@ -1,0 +1,7 @@
+plugins/
+platforms/
+hooks/
+www/fonts/
+www/img/
+*.min.js
+*.min.css

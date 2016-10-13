@@ -1,0 +1,9 @@
+#map:focus {
+    outline: #4A74A8 solid 0.15em;
+}
+.content {
+    overflow: hidden;
+}
+#map {
+    height: 100%;
+}

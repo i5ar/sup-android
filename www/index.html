@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"> -->
+
+        <!-- http://stackoverflow.com/questions/37935657/refused-to-load-the-image-because-it-violates-content-securtiy-policy-cordova -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' https://*.tile.openstreetmap.org data: *">
+
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <!-- <link rel="stylesheet" type="text/css" href="css/index.css"> -->
+        <title>Hello World</title>
+
+        <!-- Ratchet -->
+        <link rel="stylesheet" type="text/css" href="css/ratchet.min.css">
+        <link rel="stylesheet" type="text/css" href="css/ratchet-theme-android.min.css">
+        <!-- <link rel="stylesheet" type="text/css" href="css/ratchet-theme-ios.min.css"> -->
+        <meta charset="utf-8">
+        <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+        <!-- <meta name="apple-mobile-web-app-capable" content="yes"> -->
+        <!-- <meta name="apple-mobile-web-app-status-bar-style" content="black"> -->
+
+        <!-- Openlayers -->
+        <link rel="stylesheet" type="text/css" href="css/ol.min.css">
+        <script type="text/javascript" src="js/ol.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    </head>
+    <body>
+
+        <!--
+        <div class="app">
+            <h1>Apache Cordova</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+            </div>
+        </div>
+        -->
+
+        <!-- Ratchet -->
+        <!-- Make sure all your bars are the first things in your <body> -->
+        <header class="bar bar-nav">
+            <a class="icon icon-compose pull-left" href="#myModalexample"></a>
+            <a class="icon icon-gear pull-right"></a>
+            <h1 class="title">Title</h1>
+        </header>
+
+       <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+       <div class="content">
+           <!-- Openlayers -->
+            <div id="map" class="map" tabindex="0"></div>
+       </div>
+
+        <div id="myModalexample" class="modal">
+            <header class="bar bar-nav">
+               <a class="icon icon-close pull-right" href="#myModalexample"></a>
+               <h1 class="title">Modal</h1>
+            </header>
+
+            <div class="content">
+               <p class="content-padded">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/ratchet.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+
+    </body>
+</html>
